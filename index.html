@@ -17,7 +17,6 @@
     />
     <meta property="og:type" content="website" />
     <meta name="theme-color" content="#2563eb" />
-    <link rel="preconnect" href="https://www.youtube.com" />
     <link rel="preconnect" href="https://cdn.tailwindcss.com" />
     <link rel="dns-prefetch" href="https://calendar.google.com" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -30,7 +29,6 @@
         "description": "Business growth and digital marketing strategy consultation"
       }
     </script>
-    <script src="https://www.youtube.com/iframe_api"></script>
   </head>
   <body class="w-full h-full py-4 sm:py-6 px-4 sm:px-0 bg-white">
     <main
@@ -49,7 +47,19 @@
       <section
         class="w-full max-w-2xl aspect-video rounded-md mx-auto overflow-hidden bg-black shadow-lg"
       >
-        <div id="youtube-player" class="w-full h-full"></div>
+        <iframe
+          src="https://player.vimeo.com/video/1167683118?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;byline=0&amp;portrait=0&amp;sharing=0"
+          class="w-full h-full"
+          frameborder="0"
+          allow="
+            fullscreen;
+            picture-in-picture;
+            clipboard-write;
+            encrypted-media;
+            web-share;
+          "
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
       </section>
 
       <section class="">
@@ -72,40 +82,5 @@
         </div>
       </section>
     </main>
-    <script>
-      let player;
-
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player("youtube-player", {
-          width: "100%",
-          height: "100%",
-          videoId: "smqfnrPl55E",
-          playerVars: {
-            autoplay: 1,
-            controls: 0,
-            modestbranding: 1,
-            rel: 0,
-            iv_load_policy: 3,
-            fs: 0,
-            mute: 0,
-          },
-          events: {
-            onReady: onPlayerReady,
-          },
-        });
-      }
-
-      function onPlayerReady(event) {
-        setTimeout(() => {
-          event.target.playVideo();
-          event.target.unMute();
-        }, 500);
-      }
-
-      // Ensure API is loaded and ready
-      if (window.YT && window.YT.loaded) {
-        onYouTubeIframeAPIReady();
-      }
-    </script>
   </body>
 </html>
