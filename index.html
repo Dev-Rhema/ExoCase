@@ -45,10 +45,11 @@
       </section>
 
       <section
-        class="w-full max-w-2xl aspect-video rounded-md mx-auto overflow-hidden bg-black shadow-lg"
+        class="w-full max-w-2xl aspect-video rounded-md mx-auto overflow-hidden bg-black shadow-lg relative"
+        id="video-container"
       >
         <iframe
-          src="https://player.vimeo.com/video/1167683118?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;byline=0&amp;portrait=0&amp;sharing=0"
+          src="https://player.vimeo.com/video/1167683118?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=0&amp;byline=0&amp;portrait=0&amp;sharing=0"
           class="w-full h-full"
           frameborder="0"
           allow="
@@ -60,6 +61,19 @@
           "
           referrerpolicy="strict-origin-when-cross-origin"
         ></iframe>
+        <button
+          id="play-button"
+          class="absolute inset-0 flex items-center justify-center w-full h-full bg-black bg-opacity-30 hover:bg-opacity-40 transition duration-300 cursor-pointer"
+          aria-label="Play video"
+        >
+          <svg
+            class="w-30 h-30 text-white drop-shadow-lg"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </button>
       </section>
 
       <section class="">
@@ -82,5 +96,16 @@
         </div>
       </section>
     </main>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script>
+      const iframe = document.querySelector("iframe");
+      const player = new Vimeo.Player(iframe);
+      const playButton = document.getElementById("play-button");
+
+      playButton.addEventListener("click", function () {
+        player.play();
+        this.style.display = "none";
+      });
+    </script>
   </body>
 </html>
