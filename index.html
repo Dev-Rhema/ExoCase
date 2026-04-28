@@ -97,25 +97,13 @@
         Click below to book a 10 minutes conversation with us
       </p>
       <div class="flex justify-center">
-
-        <!-- Google Calendar Appointment Scheduling begin -->
-        <!-- Google Calendar Appointment Scheduling begin -->
-        <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-        <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-        <script>
-          (function () {
-            var target = document.currentScript;
-            window.addEventListener('load', function () {
-              calendar.schedulingButton.load({
-                url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ269IIw3x-jjgmYAL5w542trl6nBmv6Ql0dCEHM-9FQzOLGmn4QAh-d2s77Rx2Vv0BndJFPfS9k?gv=true',
-                color: '#2563eb',
-                label: 'Book a Call',
-                target,
-              });
-            });
-          })();
-        </script>
-        <!-- end Google Calendar Appointment Scheduling -->
+        <!-- Calendly link widget begin -->
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+        <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/theexodigitalagency/new-meeting'});return false;" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-md text-lg">
+          Book a Call
+        </button>
+        <!-- Calendly link widget end -->
       </div>
     </section>
   </main>
